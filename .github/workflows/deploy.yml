@@ -3,6 +3,7 @@ name: Update Blog Submodule
 on:
   push:
     branches: ["master"]
+    paths: ["*.md"]
 
 jobs:
   update-submodule:
