@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout blog repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
-          repository: Cappucciyes/blog# change this
+          repository: Cappucciyes/blog
           token: ${{ secrets.BLOG_TOKEN }}
           submodules: true
           fetch-depth: 0
