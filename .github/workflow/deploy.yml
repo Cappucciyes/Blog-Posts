@@ -1,20 +1,30 @@
-name: ko-post
-run-name: ko-post
-on: [push] 
+name: Update Blog Submodule
+
+on:
+  push:
+    branches: ["main"]
+
 jobs:
-  posting-new-ko-entry:
+  update-submodule:
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v6
-       with:
-        repository: 'Cappucciyes/blog'
-        ref: 'main'
-        token:  ${{ secrets.BLOG_TOKEN }}
+      - name: Checkout blog repo
+        uses: actions/checkout@v4
+        with:
+          repository: Cappucciyes/blog# change this
+          token: ${{ secrets.BLOG_TOKEN }}
+          submodules: true
+          fetch-depth: 0
 
-     - name: Setup git config
-       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "<>"
-      
- 
-  
+      - name: Bump submodule pointer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "<>"
+          git submodule update --remote --recursive
+          if git diff --quiet; then
+            echo "No submodule changes."
+          else
+            git add .
+            git commit -m "Update _posts submodule"
+            git push
+          fi

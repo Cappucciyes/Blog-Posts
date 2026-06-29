@@ -1,7 +1,6 @@
 ---
 layout: post
 catagories:
-lan: en
 ---
 
 
