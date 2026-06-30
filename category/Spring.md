@@ -4,5 +4,5 @@ title: Spring
 ---
 {{title}}
 
-![[springLogo.png]]
+![springLogo](_posts_en/images/springLogo.png)
 Post about Spring / Spring Boot framework

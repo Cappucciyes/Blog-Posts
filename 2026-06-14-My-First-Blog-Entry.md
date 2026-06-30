@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-06-14
-categories:
+categories: miscellaneous
 ---
 # About this blog
 I started this blog with two goals in mind: to document and organize what I've learned throughout my programming journey and to improve my writing skills.
